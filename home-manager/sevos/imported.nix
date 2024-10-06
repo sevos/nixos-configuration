@@ -23,8 +23,6 @@
 
   # Packages that should be installed to the user profile.
   home.packages = (with pkgs; [
-    nerdfonts
-    alacritty
 
     git
     gh
@@ -141,33 +139,6 @@
     };
   };
 
-  # alacritty - a cross-platform, GPU-accelerated terminal emulator
-  programs.alacritty = {
-    enable = true;
-    # custom settings
-    settings = {
-      import = [
-        pkgs.alacritty-theme.tokyo-night
-      ];
-      env.TERM = "xterm-256color";
-      font = {
-        normal = {
-          family = "Fira Code Nerd Font";
-        };
-        size = 16;
-      };
-      scrolling.multiplier = 5;
-      selection.save_to_clipboard = true;
-      mouse = {
-        hide_when_typing = false;
-      };
-      keyboard = {
-        bindings = [
-          { key = "N"; mods = "Control|Shift"; action = "CreateNewWindow"; }
-        ];
-      };
-    };
-  };
 
   programs.bash = {
     enable = true;

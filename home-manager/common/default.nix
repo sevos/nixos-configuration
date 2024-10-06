@@ -1,5 +1,6 @@
 {
   imports = [
-    ./alacritty
+    ./terminal
+    ./shell
   ];
 }

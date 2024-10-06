@@ -161,9 +161,11 @@
       mouse = {
         hide_when_typing = false;
       };
-      bindings = [
-        { key = "N"; mods = "Control|Shift"; action = "CreateNewWindow"; }
-      ];
+      keyboard = {
+        bindings = [
+          { key = "N"; mods = "Control|Shift"; action = "CreateNewWindow"; }
+        ];
+      };
     };
   };
 

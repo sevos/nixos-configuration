@@ -87,7 +87,7 @@
     extraSpecialArgs = { inherit inputs outputs; };
     users = {
       # Import your home-manager configuration
-      sevos = import ../../home-manager/home.nix;
+      sevos = import ../../home-manager/sevos/home.nix;
     };
   };
 

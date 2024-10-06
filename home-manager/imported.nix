@@ -24,6 +24,7 @@
   # Packages that should be installed to the user profile.
   home.packages = (with pkgs; [
     nerdfonts
+    alacritty
 
     git
     gh
@@ -50,6 +51,7 @@
     fzf # A command-line fuzzy finder
     zoxide # modern cd
     bat # modern cat
+    starship # custom prompt
 
     # networking tools
     # mtr # A network diagnostic tool

@@ -1,7 +1,9 @@
 {
   imports = [
-    ./packages.nix
+    ./bash
     ./git.nix
+    ./packages.nix
     ./starship.nix
+    ./zoxide.nix
   ];
 }

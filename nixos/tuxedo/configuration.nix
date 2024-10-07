@@ -75,6 +75,7 @@
 
   users.users = {
     sevos = {
+      description = "Artur Roszczyk";
       initialPassword = "qwerty";
       isNormalUser = true;
       openssh.authorizedKeys.keys = [

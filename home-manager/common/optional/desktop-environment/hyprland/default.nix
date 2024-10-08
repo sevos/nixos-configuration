@@ -5,7 +5,7 @@
     ./settings.nix
   ];
 
-  home.packages = with pkgs.unstable; [
+  home.packages = with pkgs; [
     xdg-desktop-portal-hyprland
     wofi
     dunst

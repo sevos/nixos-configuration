@@ -21,6 +21,7 @@
     # You can also split up your configuration and import pieces of it here:
     ../common/optional/bootloader/uefi.nix
     ../common/optional/desktop-environment/gdm-gnome.nix
+    ../common/optional/desktop-environment/gdm-hyprland.nix
     ../common
 
     # Import your generated (nixos-generate-config) hardware configuration

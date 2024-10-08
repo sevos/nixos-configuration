@@ -7,7 +7,6 @@
 
     env = [
       "XCURSORSIZE, 24"
-      "HYPRCURSOR_THEME, rose-pine-hyprcursor"
       "HYPRCURSOR_SIZE, 24"
       "GSK_RENDERER, ngl"
     ];

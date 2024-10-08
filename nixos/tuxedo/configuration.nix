@@ -87,6 +87,15 @@
       ];
       extraGroups = ["networkmanager" "wheel"];
     };
+
+    zencargo = {
+      description = "Zencargo";
+      initialPassword = "qwerty";
+      isNormalUser = true;
+      openssh.authorizedKeys.keys = [
+      ];
+      extraGroups = ["networkmanager" "wheel"];
+    };
   };
 
   home-manager = {
@@ -94,6 +103,7 @@
     users = {
       # Import your home-manager configuration
       sevos = import ../../home-manager/sevos/home.nix;
+      zencargo = import ../../home-manager/zencargo/home.nix;
     };
   };
 

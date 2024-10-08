@@ -19,8 +19,8 @@
     # inputs.hardware.nixosModules.common-ssd
 
     # You can also split up your configuration and import pieces of it here:
-    ../common/optional/uefi-bootloader.nix
-    ../common/optional/x11.nix
+    ../common/optional/bootloader/uefi.nix
+    ../common/optional/desktop-environment/gdm-gnome.nix
     ../common
 
     # Import your generated (nixos-generate-config) hardware configuration

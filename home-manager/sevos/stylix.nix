@@ -1,6 +1,6 @@
 {pkgs, stylix, ...}:
 {
-  home.file."Obrazy/wallpaper" = {
+  home.file."Obrazy/wallpaper.jpg" = {
     source = ./wallpaper.jpg;
   };
 

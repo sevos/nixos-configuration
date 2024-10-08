@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{inputs, pkgs, ...}:
 
 {
   imports = [
@@ -14,6 +14,8 @@
     hypridle
     hyprlock
     hyprpaper
+  ] ++ [
+    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
 
   wayland.windowManager.hyprland = {

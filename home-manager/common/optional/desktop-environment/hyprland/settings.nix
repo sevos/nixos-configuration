@@ -5,6 +5,12 @@
     "$browser" = "chromium";
     "$menu" = "wofi --show drun";
 
+    env = [
+      "XCURSORSIZE, 24"
+      "HYPRCURSOR_SIZE, 24"
+      "GSK_RENDERER, ngl"
+    ];
+
     exec-once = [
       "xdg-settings set default-web-browser org.chromium.Chromium.desktop"
       "dunst"

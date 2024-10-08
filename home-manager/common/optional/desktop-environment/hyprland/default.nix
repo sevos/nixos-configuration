@@ -10,6 +10,10 @@
     wofi
     dunst
     waybar
+    hyprcursor
+    hypridle
+    hyprlock
+    hyprpaper
   ];
 
   wayland.windowManager.hyprland = {

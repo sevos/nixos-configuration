@@ -15,7 +15,7 @@
       env.TERM = "xterm-256color";
       font = {
         normal = {
-          family = "Fira Code Nerd Font";
+          family = "IosevkaTerm Nerd Font Mono";
         };
         size = 16;
       };

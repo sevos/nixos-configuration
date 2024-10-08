@@ -14,12 +14,6 @@
         pkgs.alacritty-theme.tokyo-night
       ];
       env.TERM = "xterm-256color";
-      font = {
-        normal = {
-          family = "CaskaydiaMono Nerd Font";
-        };
-        size = 13;
-      };
       scrolling.multiplier = 5;
       selection.save_to_clipboard = true;
       mouse = {

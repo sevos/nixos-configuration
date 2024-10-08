@@ -8,5 +8,6 @@
     ./1password
     ./virtualisation
     ./printing.nix
+    ./stylix
   ];
 }

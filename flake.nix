@@ -14,7 +14,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
-    stylix.url = "github:danth/stylix/cf8b6e2d4e8aca8ef14b839a906ab5eb98b08561";
+    stylix.url = "github:danth/stylix/release-24.05";
   };
 
   outputs = {

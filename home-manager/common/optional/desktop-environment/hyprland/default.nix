@@ -15,6 +15,9 @@
     hypridle
     hyprlock
     hyprpaper
+    brightnessctl
+    wireplumber
+    pipewire
   ];
 
   wayland.windowManager.hyprland = {

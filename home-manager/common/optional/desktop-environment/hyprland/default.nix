@@ -32,4 +32,9 @@
   home.file.".config/dunst/dunstrc" = {
     source = ./dunstrc;
   };
+
+  home.file.".config/waybar" = {
+    source = ./waybar;
+    recursive = true;
+  };
 }

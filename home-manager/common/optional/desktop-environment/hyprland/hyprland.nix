@@ -21,7 +21,7 @@
       "hyprctl setcursor Adwaita 36"
       "gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita'"
       "dunst"
-      "waybar"
+      "sh $HOME/.config/waybar/waybar-wrapper.sh"
       "1password --silent"
     ];
 

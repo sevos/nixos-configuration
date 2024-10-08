@@ -3,6 +3,7 @@
 {
   imports = [
     ./hyprland.nix
+    ./clipboard.nix
   ];
 
   home.packages = with pkgs; [

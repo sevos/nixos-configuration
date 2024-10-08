@@ -14,11 +14,13 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
+    stylix.url = "github:danth/stylix/cf8b6e2d4e8aca8ef14b839a906ab5eb98b08561";
   };
 
   outputs = {
     self,
     nixpkgs,
+    stylix,
     home-manager,
     ...
   } @ inputs: let
@@ -58,6 +60,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
+          stylix.nixosModules.stylix
           ./nixos/tuxedo/configuration.nix
         ];
       };

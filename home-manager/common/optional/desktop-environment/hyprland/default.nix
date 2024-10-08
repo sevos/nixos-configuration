@@ -28,4 +28,8 @@
     # Whether to enable hyprland-session.target on hyprland startup
     systemd.enable = true;
   };
+
+  home.file.".config/dunst/dunstrc" = {
+    source = ./dunstrc;
+  };
 }

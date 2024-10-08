@@ -1,5 +1,10 @@
-{machine-config, ...}:
+{machine-config, pkgs, ...}:
 {
+
+  home.packages = with pkgs; [
+    unstable.font-awesome
+  ];
+
   home.file.".config/hypr/hypridle.conf" = {
     source = ./hypridle.conf;
   };
@@ -32,7 +37,7 @@
       "xdg-settings set default-web-browser org.chromium.Chromium.desktop"
       "hyprctl setcursor Adwaita 36"
       "gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita'"
-      "dunst"
+      "dunst & hyprpaper & hypridle"
       "sh $HOME/.config/waybar/waybar-wrapper.sh"
       "1password --silent"
     ];

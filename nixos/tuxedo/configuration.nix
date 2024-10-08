@@ -21,7 +21,7 @@
     # You can also split up your configuration and import pieces of it here:
     ../common/optional/bootloader/uefi.nix
     ../common/optional/desktop-environment/gdm-gnome.nix
-    ../common/optional/desktop-environment/gdm-hyprland.nix
+    ../common/optional/desktop-environment/hyprland
     ../common
 
     # Import your generated (nixos-generate-config) hardware configuration
@@ -100,13 +100,21 @@
   };
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs outputs; };
+    extraSpecialArgs = { 
+      inherit inputs outputs; 
+      machine-config = config;
+    };
     users = {
       # Import your home-manager configuration
       sevos = import ../../home-manager/sevos/home.nix;
       zencargo = import ../../home-manager/zencargo/home.nix;
     };
   };
+
+  hyprland.monitor = [
+    "eDP-1, 2560x1600@60.00000, 0x0, 2"
+    ", preferred, auto, 2, mirror, eDP-1"
+  ];
 
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.

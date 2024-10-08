@@ -1,5 +1,9 @@
-{pkgs, ...}: 
+{lib, ...}: 
 {
+  imports = [
+    ./config.nix
+  ];
+
   programs.hyprland = {
     # Install the packages from nixpkgs
     enable = true;

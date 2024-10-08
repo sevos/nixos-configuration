@@ -21,7 +21,6 @@
     ../common
     ../common/optional/desktop-environment/hyprland
     ./imported.nix
-    ./hyprland.nix
   ];
 
   nixpkgs = {

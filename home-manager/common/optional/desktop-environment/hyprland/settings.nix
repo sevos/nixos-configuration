@@ -1,5 +1,8 @@
+{machine-config, ...}:
 {
   wayland.windowManager.hyprland.settings = {
+    inherit (machine-config.hyprland) monitor;
+
     "$terminal" = "alacritty";
     "$fileManager" = "nautilus";
     "$browser" = "chromium";

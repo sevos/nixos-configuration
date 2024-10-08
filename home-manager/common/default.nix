@@ -1,3 +1,4 @@
+{pkgs, ...}:
 {
   imports = [
     ./1password
@@ -5,5 +6,9 @@
     ./terminal
     ./shell
     ./browser
+  ];
+
+  home.packages = with pkgs; [
+    slack
   ];
 }

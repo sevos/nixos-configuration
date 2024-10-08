@@ -5,7 +5,7 @@
     ./settings.nix
   ];
 
-  home.packages = with pkgs; [
+  home.packages = with pkgs.unstable; [
     xdg-desktop-portal-hyprland
     wofi
     dunst
@@ -20,7 +20,7 @@
     # Whether to enable Hyprland wayland compositor
     enable = true;
     # The hyprland package to use
-    package = pkgs.hyprland;
+    package = pkgs.unstable.hyprland;
     # Whether to enable XWayland
     xwayland.enable = true;
 

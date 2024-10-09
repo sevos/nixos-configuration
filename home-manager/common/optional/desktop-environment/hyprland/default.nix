@@ -4,6 +4,7 @@
   imports = [
     ./hyprland.nix
     ./clipboard.nix
+    ./dark-mode.nix
   ];
 
   home.packages = with pkgs; [

@@ -18,7 +18,7 @@
   };
 
   wayland.windowManager.hyprland.settings = {
-    inherit (machine-config.hyprland) monitor;
+    inherit (machine-config.hyprland) monitor workspace;
 
     "$terminal" = "alacritty";
     "$fileManager" = "nautilus";

@@ -6,5 +6,9 @@ with lib;
       type = types.listOf(types.str);
       default = [",preferred, auto, auto"];
     };
+    workspace = mkOption {
+      type = types.listOf(types.str);
+      default = [];
+    };
   };
 }

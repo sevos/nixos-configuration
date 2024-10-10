@@ -82,5 +82,10 @@
 
     # Rust
     cargo
+
+    # Kubernetes
+    kubectl
+    helm
+    k9s
   ]);
 }

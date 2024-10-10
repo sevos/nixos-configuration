@@ -62,6 +62,10 @@
   programs.home-manager.enable = true;
   programs.git.enable = true;
 
+  home.packages = with pkgs; [
+    google-cloud-sdk
+  ];
+
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 

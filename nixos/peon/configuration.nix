@@ -22,6 +22,7 @@
     ../common/optional/bootloader/uefi.nix
     ../common/optional/desktop-environment/gdm-gnome.nix
     ../common/optional/desktop-environment/hyprland
+    ../common/optional/steam
     ../common
 
     # Import your generated (nixos-generate-config) hardware configuration

@@ -19,6 +19,7 @@
     brightnessctl
     wireplumber
     pipewire
+    wlogout
   ];
 
   wayland.windowManager.hyprland = {

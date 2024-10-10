@@ -131,6 +131,7 @@
       "$mainMod, RETURN, exec, $terminal"
       "$mainMod, Q, killactive,"
       "$mainMod, M, exit,"
+      "$mainMod, ESCAPE, exec, wlogout"
       "$mainMod, E, exec, $fileManager"
       "$mainMod, B, exec, $browser"
       "$mainMod, F, togglefloating,"

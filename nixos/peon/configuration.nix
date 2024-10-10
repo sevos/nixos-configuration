@@ -81,7 +81,7 @@
     nvidia = {
       modesetting.enable = true;
       powerManagement = {
-        enable = false;
+        enable = true;
       	finegrained = false;
       };
       open = false;
@@ -94,6 +94,17 @@
       driSupport = true;
     };
   };
+
+  services.udev.extraRules = lib.strings.concatStringsSep ", " [
+    ''ACTION=="add"''
+
+    # See below on how to get the correct values for these three
+    ''SUBSYSTEM=="pci"''
+    ''ATTR{vendor}=="0x8086"'' 
+    ''ATTR{device}=="0x7a38"''
+
+    ''ATTR{power/wakeup}="disabled"''
+  ];
 
   users.users = {
     sevos = {

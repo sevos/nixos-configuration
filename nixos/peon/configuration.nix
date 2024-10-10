@@ -72,12 +72,28 @@
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
   };
 
-  hardware.tuxedo-rs = {
-    enable = true;
-    tailor-gui.enable = true;
-  };
-
   networking.hostName = "peon";
+ 
+  boot.kernelParams = [ "nvidia_drm.fbdev=1" "nvidia-drm.modeset=1" "module_blacklist=i915,nouveau" ];
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  hardware = {
+    nvidia = {
+      modesetting.enable = true;
+      powerManagement = {
+        enable = false;
+      	finegrained = false;
+      };
+      open = false;
+      nvidiaSettings = true;
+      package = config.boot.kernelPackages.nvidiaPackages.production;
+    };
+
+    opengl = {
+      enable = true;
+      driSupport = true;
+    };
+  };
 
   users.users = {
     sevos = {

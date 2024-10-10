@@ -61,6 +61,13 @@
           ./nixos/tuxedo/configuration.nix
         ];
       };
+      peon = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          # > Our main nixos configuration file <
+          ./nixos/peon/configuration.nix
+        ];
+      };
     };
   };
 }

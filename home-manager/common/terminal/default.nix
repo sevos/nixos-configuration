@@ -18,7 +18,7 @@
         normal = {
           family = "CaskaydiaMono Nerd Font";
         };
-        size = 16;
+        size = 13;
       };
       scrolling.multiplier = 5;
       selection.save_to_clipboard = true;

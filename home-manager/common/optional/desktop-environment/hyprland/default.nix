@@ -20,8 +20,8 @@
     wireplumber
     pipewire
     wlogout
-    networkmanagerapplet
     wev
+    networkmanagerapplet
   ];
 
   wayland.windowManager.hyprland = {

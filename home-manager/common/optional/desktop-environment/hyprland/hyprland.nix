@@ -19,7 +19,6 @@
 
   home.file.".config/hypr/cycle-wallpaper.sh" = {
     source = ./cycle-wallpaper.sh;
-    mode = "0755";
   };
   
 
@@ -146,7 +145,7 @@
       "$mainMod, SPACE, exec, $menu"
       "$mainMod, P, pseudo,"
       "$mainMod, J, togglesplit, "
-      "$mainMod, SHIFT, W, exec, ~/.config/hypr/cycle-wallpaper.sh"
+      "$mainMod SHIFT, W, exec, ~/.config/hypr/cycle-wallpaper.sh"
 
       # Move focus with mainMod + arrow keys
       "$mainMod, left, movefocus, l"

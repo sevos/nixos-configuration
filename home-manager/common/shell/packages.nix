@@ -87,5 +87,8 @@
     kubectl
     helm
     k9s
+
+    # Python
+    python3
   ]);
 }

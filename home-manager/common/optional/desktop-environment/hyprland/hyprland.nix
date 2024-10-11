@@ -17,6 +17,12 @@
     source = ./hyprpaper.conf;
   };
 
+  home.file.".config/hypr/cycle-wallpaper.sh" = {
+    source = ./cycle-wallpaper.sh;
+    mode = "0755";
+  };
+  
+
   wayland.windowManager.hyprland.settings = {
     inherit (machine-config.hyprland) monitor workspace;
 
@@ -139,7 +145,8 @@
       "$mainMod, F, togglefloating,"
       "$mainMod, SPACE, exec, $menu"
       "$mainMod, P, pseudo,"
-      "bind = $mainMod, J, togglesplit, "
+      "$mainMod, J, togglesplit, "
+      "$mainMod, SHIFT, W, exec, ~/.config/hypr/cycle-wallpaper.sh"
 
       # Move focus with mainMod + arrow keys
       "$mainMod, left, movefocus, l"

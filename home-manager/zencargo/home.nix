@@ -21,6 +21,7 @@
     ../common
     ../common/optional/desktop-environment/hyprland
     ./imported.nix
+    ./autostart-slack.nix
   ];
 
   nixpkgs = {

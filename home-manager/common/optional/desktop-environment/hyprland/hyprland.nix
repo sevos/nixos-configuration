@@ -37,8 +37,10 @@
       "xdg-settings set default-web-browser org.chromium.Chromium.desktop"
       "hyprctl setcursor Adwaita 36"
       "dunst & hyprpaper & hypridle"
+      "nm-applet"
       "sh $HOME/.config/waybar/waybar-wrapper.sh"
       "1password --silent"
+      "[workspace -n chatgpt] chromium --app=https://chatgpt.com"
     ];
 
     general = {

@@ -10,6 +10,9 @@
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
+
+    sddm-sugar-candy-nix = inputs.sddm-sugar-candy-nix.overlays.default;
+
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will

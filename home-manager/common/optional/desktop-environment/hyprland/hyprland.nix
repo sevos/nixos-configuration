@@ -40,7 +40,7 @@
       "nm-applet"
       "sh $HOME/.config/waybar/waybar-wrapper.sh"
       "1password --silent"
-      "[workspace chatgpt] chromium --app=https://chatgpt.com"
+      "[workspace special:chatgpt silent] chromium --app=https://chatgpt.com"
     ];
 
     general = {

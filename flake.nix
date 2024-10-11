@@ -14,12 +14,6 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
-
-    sddm-sugar-candy-nix = {
-      url = "github:Zhaith-Izaliel/sddm-sugar-candy-nix";
-      # Optional, by default this flake follows nixpkgs-unstable.
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
@@ -65,7 +59,6 @@
         modules = [
           # > Our main nixos configuration file <
           ./nixos/tuxedo/configuration.nix
-          inputs.sddm-sugar-candy-nix.nixosModules.default
         ];
       };
       peon = nixpkgs.lib.nixosSystem {
@@ -73,7 +66,6 @@
         modules = [
           # > Our main nixos configuration file <
           ./nixos/peon/configuration.nix
-          inputs.sddm-sugar-candy-nix.nixosModules.default
         ];
       };
     };

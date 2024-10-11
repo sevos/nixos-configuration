@@ -1,5 +1,6 @@
 {pkgs, ...}:
 {
+
   home.packages = with pkgs; [
     alacritty
     nerdfonts
@@ -15,7 +16,7 @@
       env.TERM = "xterm-256color";
       font = {
         normal = {
-          family = "IosevkaTerm Nerd Font Mono";
+          family = "CaskaydiaMono Nerd Font";
         };
         size = 16;
       };

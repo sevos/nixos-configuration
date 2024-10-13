@@ -22,6 +22,7 @@
     wlogout
     wev
     networkmanagerapplet
+    pavucontrol
   ];
 
   wayland.windowManager.hyprland = {

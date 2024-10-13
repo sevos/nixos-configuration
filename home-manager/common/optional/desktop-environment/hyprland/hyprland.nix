@@ -17,11 +17,6 @@
     source = ./hyprpaper.conf;
   };
 
-  home.file.".config/hypr/cycle-wallpaper.sh" = {
-    source = ./cycle-wallpaper.sh;
-  };
-  
-
   wayland.windowManager.hyprland.settings = {
     inherit (machine-config.hyprland) monitor workspace;
 

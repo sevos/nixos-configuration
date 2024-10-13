@@ -20,7 +20,6 @@
     # ./nvim.nix
     ../common
     ../common/optional/desktop-environment/hyprland
-    ./stylix.nix
     ./imported.nix
   ];
 
@@ -53,6 +52,10 @@
   home = {
     username = "sevos";
     homeDirectory = "/home/sevos";
+  };
+
+  home.file."Obrazy/wallpaper.jpg" = {
+    source = ../../style/wallpapers/stars-02.jpg;
   };
 
   # Add stuff for your user as you see fit:

@@ -7,6 +7,8 @@
     enable = true;
     polarity = "dark";
     image = ../../../style/wallpapers/stars-02.jpg;
+    
+    base16Scheme = ../../../style/tokyo-dark.yaml;
 
     fonts = {
       serif = {

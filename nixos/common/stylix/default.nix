@@ -5,8 +5,8 @@
 
   stylix = {
     enable = true;
-    image = ../../../home-manager/sevos/wallpaper.jpg;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/tomorrow-night.yaml";
+    polarity = "dark";
+    image = ../../../style/wallpapers/stars-02.jpg;
 
     fonts = {
       serif = {
@@ -20,8 +20,8 @@
       };
 
       monospace = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Sans Mono";
+        package = (pkgs.unstable.nerdfonts.override { fonts = [ "CascadiaMono" "CascadiaCode"]; });
+        name = "CaskaydiaMono Nerd Font";
       };
 
       emoji = {
@@ -29,5 +29,15 @@
         name = "Noto Color Emoji";
       };
     };
+
+    targets = {
+      grub = {
+        enable = true;
+        useImage = true;
+      };
+      gtk.enable = true;
+      gnome.enable = true;
+    };
+
   };
 }

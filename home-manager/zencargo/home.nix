@@ -55,6 +55,10 @@
     homeDirectory = "/home/zencargo";
   };
 
+  home.file."Obrazy/wallpaper.jpg" = {
+    source = ../../style/wallpapers/container-port.jpg;
+  };
+
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];

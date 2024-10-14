@@ -68,6 +68,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
+          stylix.nixosModules.stylix
           ./nixos/peon/configuration.nix
         ];
       };

@@ -18,7 +18,7 @@
   };
 
   wayland.windowManager.hyprland.settings = {
-    inherit (machine-config.hyprland) monitor workspace;
+    inherit (machine-config.hyprland) monitor workspace xwayland;
 
     "$terminal" = "alacritty";
     "$fileManager" = "nautilus";
@@ -31,7 +31,7 @@
       "HYPRCURSOR_SIZE, 36"
       "HYPRCURSOR_THEME, Adwaita"
       "GSK_RENDERER, ngl"
-    ];
+    ] ++ machine-config.hyprland.env;
 
     exec-once = [
       "xdg-settings set default-web-browser org.chromium.Chromium.desktop"

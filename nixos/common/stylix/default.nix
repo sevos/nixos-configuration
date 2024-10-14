@@ -13,12 +13,12 @@
     fonts = {
       serif = {
         package = pkgs.dejavu_fonts;
-        name = "DejaVu Serif";
+        name = "Cantarrel"; # this is not a serif font - we override
       };
 
       sansSerif = {
         package = pkgs.dejavu_fonts;
-        name = "DejaVu Sans";
+        name = "Cantarell";
       };
 
       monospace = {
@@ -30,6 +30,11 @@
         package = pkgs.noto-fonts-emoji;
         name = "Noto Color Emoji";
       };
+
+      sizes = {
+        applications = 15;
+        terminal = 15;
+      };
     };
 
     targets = {
@@ -40,6 +45,6 @@
       gtk.enable = true;
       gnome.enable = true;
     };
-
   };
+
 }

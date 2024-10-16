@@ -9,10 +9,6 @@
     source = ./hypridle.conf;
   };
 
-  home.file.".config/hypr/hyprlock.conf" = {
-    source = ./hyprlock.conf;
-  };
-
   wayland.windowManager.hyprland.settings = {
     inherit (machine-config.hyprland) monitor workspace;
 
@@ -127,6 +123,7 @@
     bind = [
       "$mainMod, RETURN, exec, $terminal"
       "$mainMod, Q, killactive,"
+      "$mainMod, L, exec, loginctl lock-session"
       "$mainMod, M, exit,"
       "$mainMod, ESCAPE, exec, wlogout"
       "$mainMod, E, exec, $fileManager"

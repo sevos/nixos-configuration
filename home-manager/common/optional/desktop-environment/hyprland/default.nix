@@ -13,7 +13,7 @@
     waybar
     hyprcursor
     hypridle
-    hyprlock
+    swaylock-effects
     swww
     waypaper
     brightnessctl
@@ -46,5 +46,9 @@
   home.file.".config/waybar" = {
     source = ./waybar;
     recursive = true;
+  };
+
+  home.file.".config/swaylock/config" = {
+    source = ./swaylock.conf;
   };
 }

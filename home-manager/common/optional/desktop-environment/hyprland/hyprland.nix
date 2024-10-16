@@ -2,7 +2,6 @@
 {
 
   home.packages = with pkgs; [
-    unstable.font-awesome
   ];
 
   home.file.".config/hypr/hypridle.conf" = {
@@ -11,10 +10,6 @@
 
   home.file.".config/hypr/hyprlock.conf" = {
     source = ./hyprlock.conf;
-  };
-
-  home.file.".config/hypr/hyprpaper.conf" = {
-    source = ./hyprpaper.conf;
   };
 
   wayland.windowManager.hyprland.settings = {
@@ -36,7 +31,7 @@
     exec-once = [
       "xdg-settings set default-web-browser org.chromium.Chromium.desktop"
       "hyprctl setcursor Adwaita 36"
-      "dunst & hypridle & hyprpaper &"
+      "dunst & hypridle & swwww-daemon &"
       "nm-applet"
       "sh $HOME/.config/waybar/waybar-wrapper.sh"
       "1password --silent"

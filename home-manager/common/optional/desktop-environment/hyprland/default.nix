@@ -14,7 +14,8 @@
     hyprcursor
     hypridle
     hyprlock
-    hyprpaper
+    swww
+    waypaper
     brightnessctl
     wireplumber
     pipewire
@@ -22,6 +23,7 @@
     wev
     networkmanagerapplet
     pavucontrol
+    unstable.font-awesome
   ];
 
   wayland.windowManager.hyprland = {

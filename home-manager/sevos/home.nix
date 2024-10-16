@@ -53,10 +53,6 @@
     homeDirectory = "/home/sevos";
   };
 
-  home.file."Obrazy/wallpaper.jpg" = {
-    source = ../../style/wallpapers/stars-02.jpg;
-  };
-
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];

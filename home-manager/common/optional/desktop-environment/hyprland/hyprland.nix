@@ -1,8 +1,9 @@
 {machine-config, pkgs, ...}:
 {
 
-  home.packages = with pkgs; [
-  ];
+  home.directory."Obrazy/Wallpapers" = {
+    source = ../../../../../style/wallpapers;
+  };
 
   home.file.".config/hypr/hypridle.conf" = {
     source = ./hypridle.conf;
@@ -31,7 +32,7 @@
     exec-once = [
       "xdg-settings set default-web-browser org.chromium.Chromium.desktop"
       "hyprctl setcursor Adwaita 36"
-      "dunst & hypridle & swwww-daemon &"
+      "dunst & hypridle & swww-daemon &"
       "nm-applet"
       "sh $HOME/.config/waybar/waybar-wrapper.sh"
       "1password --silent"

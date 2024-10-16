@@ -1,0 +1,3 @@
+[submodule "pkgs/nix-npm-buildpackage"]
+	path = pkgs/nix-npm-buildpackage
+	url = https://github.com/serokell/nix-npm-buildpackage

@@ -1,7 +1,7 @@
 {machine-config, pkgs, ...}:
 {
 
-  home.directory."Obrazy/Wallpapers" = {
+  home.file."Obrazy/Wallpapers" = {
     source = ../../../../../style/wallpapers;
   };
 

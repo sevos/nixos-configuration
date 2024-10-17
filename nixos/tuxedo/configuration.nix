@@ -82,6 +82,26 @@
 
   networking.hostName = "tuxedo";
 
+  systemd.services.bluetooth-sleep-toggle = {
+    description = "Bluetooth power toggle before/after sleep";
+    wantedBy = [ "sleep.target" ];
+    script = ''
+      #!/bin/sh
+      case "$1" in
+          pre)
+              bluetoothctl power off
+              hciconfig hci0 down
+              echo "Bluetooth powered off"
+              ;;
+          post)
+              bluetoothctl power on
+              hciconfig hci0 up
+              echo "Bluetooth powered on"
+              ;;
+      esac
+    '';
+  };
+
   users.users = {
     sevos = {
       description = "Artur Roszczyk";

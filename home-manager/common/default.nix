@@ -9,6 +9,6 @@
   ];
 
   home.packages = with pkgs; [
-    slack
+    unstable.slack
   ];
 }

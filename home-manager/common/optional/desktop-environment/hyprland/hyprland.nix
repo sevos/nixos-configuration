@@ -10,7 +10,7 @@
   };
 
   wayland.windowManager.hyprland.settings = {
-    inherit (machine-config.hyprland) monitor workspace;
+    inherit (machine-config.hyprland) monitor;
 
     "$terminal" = "alacritty";
     "$fileManager" = "nautilus";
@@ -34,6 +34,11 @@
       "1password --silent"
       "[workspace special:chatgpt silent] chromium --app=https://chatgpt.com"
     ];
+
+    workspace = [
+      "special:chatgpt, on-created-empty:chromium --app=https://chatgpt.com"
+      "special:slack, on-created-empty:slack"
+    ] ++ machine-config.hyprland.workspace;
 
     general = {
       no_border_on_floating = false;
@@ -166,10 +171,7 @@
       "$mainMod SHIFT, 9, movetoworkspace, 9"
       "$mainMod SHIFT, 0, movetoworkspace, 10"
 
-      # Example special workspace (scratchpad)
-      "$mainMod, S, togglespecialworkspace, magic"
-      "$mainMod SHIFT, S, movetoworkspace, special:magic"
-      
+      "$mainMod, S, togglespecialworkspace, slack"
       "$mainMod, C, togglespecialworkspace, chatgpt"
 
 			# Scroll through existing workspaces with mainMod + scroll

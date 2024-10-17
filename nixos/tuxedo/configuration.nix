@@ -77,6 +77,9 @@
     tailor-gui.enable = true;
   };
 
+  # add acpi.ec_no_wakeup=1 to kernel parameters to fix suspend on Tuxedo
+  boot.kernelParams = ["acpi.ec_no_wakeup=1"];
+
   networking.hostName = "tuxedo";
 
   users.users = {

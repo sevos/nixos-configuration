@@ -20,6 +20,7 @@
     # ./nvim.nix
     ../common
     ../common/optional/desktop-environment/hyprland
+    ./hey
   ];
 
   nixpkgs = {

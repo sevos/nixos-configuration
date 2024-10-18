@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=HEY Mail
+Comment=Launch HEY Mail
+Icon=/home/sevos/.local/share/icons/hicolor/48x48/apps/hey.png
+Exec=chromium --app="https://app.hey.com" %U
+Terminal=false

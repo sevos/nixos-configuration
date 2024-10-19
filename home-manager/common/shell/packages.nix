@@ -70,6 +70,7 @@
     ethtool
     pciutils # lspci
     usbutils # lsusb
+
     # NodeJS
     nodejs_20
     yarn
@@ -82,11 +83,6 @@
 
     # Rust
     cargo
-
-    # Kubernetes
-    kubectl
-    helm
-    k9s
 
     # Python
     python3

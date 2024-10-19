@@ -52,14 +52,9 @@
     homeDirectory = "/home/zencargo";
   };
 
-  # Add stuff for your user as you see fit:
-  # programs.neovim.enable = true;
-  # home.packages = with pkgs; [ steam ];
+  programs.git.userEmail = "artur@zencargo.com";
 
-  # Enable home-manager and git
   programs.home-manager.enable = true;
-  programs.git.enable = true;
-
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 

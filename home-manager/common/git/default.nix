@@ -3,7 +3,6 @@
   programs.git = {
     enable = true;
     userName = "Artur Roszczyk";
-    userEmail = "sevos@hey.com";
 
     includes = [
       { path = "user"; }

@@ -19,8 +19,6 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     ../common
-    ../common/optional/desktop-environment/hyprland
-    ./hey
   ];
 
   nixpkgs = {
@@ -53,6 +51,8 @@
     username = "sevos";
     homeDirectory = "/home/sevos";
   };
+
+  heymail.enable = true;
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;

@@ -1,4 +1,3 @@
-{pkgs, ...}:
 {
   imports = [
     ./1password
@@ -6,9 +5,7 @@
     ./terminal
     ./shell
     ./browser
-  ];
-
-  home.packages = with pkgs; [
-    unstable.slack
+    ./desktop-environment/hyprland
+    ./heymail
   ];
 }

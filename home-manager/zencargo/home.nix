@@ -19,8 +19,6 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     ../common
-    ../common/optional/desktop-environment/hyprland
-    ./autostart-slack.nix
   ];
 
   nixpkgs = {
@@ -61,10 +59,6 @@
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;
-
-  home.packages = with pkgs; [
-    google-cloud-sdk
-  ];
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";

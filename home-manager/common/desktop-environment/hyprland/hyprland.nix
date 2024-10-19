@@ -2,7 +2,7 @@
 {
 
   home.file."Obrazy/Wallpapers" = {
-    source = ../../../../../style/wallpapers;
+    source = ../../../../style/wallpapers;
   };
 
   home.file.".config/hypr/hypridle.conf" = {

@@ -15,7 +15,8 @@
     "$terminal" = "alacritty";
     "$fileManager" = "nautilus";
     "$browser" = "chromium";
-    "$menu" = "wofi --show drun";
+    # "$menu" = "wofi --show drun";
+    "$menu" = "ulauncher-toggle";
 
     env = [
       "XCURSORSIZE, 36"
@@ -32,6 +33,7 @@
       "nm-applet"
       "sh $HOME/.config/waybar/waybar-wrapper.sh"
       "1password --silent"
+      "ulauncher --hide-window --no-window-shadow"
     ];
 
     workspace = [

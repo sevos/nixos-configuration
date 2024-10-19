@@ -24,6 +24,7 @@
     networkmanagerapplet
     pavucontrol
     unstable.font-awesome
+    unstable.ulauncher
   ];
 
   wayland.windowManager.hyprland = {
@@ -50,5 +51,9 @@
 
   home.file.".config/swaylock/config" = {
     source = ./swaylock.conf;
+  };
+
+  home.file.".config/ulauncher/settings.json" = {
+    source = ./ulauncher.json;
   };
 }

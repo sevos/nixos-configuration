@@ -38,7 +38,6 @@
 
     workspace = [
       "special:chatgpt, on-created-empty:chromium --app=https://chatgpt.com"
-      "special:slack, on-created-empty:slack"
     ] ++ machine-config.hyprland.workspace;
 
     general = {
@@ -172,7 +171,6 @@
       "$mainMod SHIFT, 9, movetoworkspace, 9"
       "$mainMod SHIFT, 0, movetoworkspace, 10"
 
-      "$mainMod, S, togglespecialworkspace, slack"
       "$mainMod, C, togglespecialworkspace, chatgpt"
 
 			# Scroll through existing workspaces with mainMod + scroll

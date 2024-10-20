@@ -7,5 +7,6 @@
     ./browser
     ./desktop-environment/hyprland
     ./heymail
+    ./slack.nix
   ];
 }

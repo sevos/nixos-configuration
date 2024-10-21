@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=wFirma
+Comment=Uruchom wFirmę
+Icon=/home/sevos/.local/share/icons/hicolor/48x48/apps/wfirma.png
+Exec=chromium --app="https://wfirma.pl/user_companies/index?cookieCheck=login" %U
+Terminal=false

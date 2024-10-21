@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Google Meet
+Comment=Uruchom Google Meet
+Icon=~/.local/share/icons/hicolor/48x48/apps/google-meet.png
+Exec=chromium --app="https://meet.google.com" %U
+Terminal=false

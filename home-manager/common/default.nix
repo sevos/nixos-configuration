@@ -6,7 +6,6 @@
     ./shell
     ./browser
     ./desktop-environment/hyprland
-    ./heymail
-    ./slack.nix
+    ./apps
   ];
 }

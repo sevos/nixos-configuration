@@ -53,6 +53,7 @@
   };
 
   heymail.enable = true;
+  wfirma.enable = true;
   programs.git.userEmail = "sevos@hey.com";
 
   programs.home-manager.enable = true;

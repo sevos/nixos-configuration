@@ -50,6 +50,7 @@
     # it provides the command `nom` works just like `nix`
     # with more details log output
     nix-output-monitor
+    nh
 
     # productivity
     # hugo # static site generator

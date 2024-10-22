@@ -1,11 +1,13 @@
 { pkgs, ...}: {
 
   programs._1password-gui = {
+    enable = true;
+    package = pkgs.unstable._1password-gui;
     polkitPolicyOwners = [ "sevos" ];
   };
 
-  environment.systemPackages = with pkgs.unstable; [
-    _1password
-    _1password-gui
-  ];
+  programs._1password = {
+    enable = true;
+    package = pkgs.unstable._1password;
+  };
 }

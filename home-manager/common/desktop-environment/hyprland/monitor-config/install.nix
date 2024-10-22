@@ -6,7 +6,7 @@
   
   wayland.windowManager.hyprland.settings = {
     exec-once = [
-      "ln -sf $HOME/.config/hypr/monitor-config/default.conf $HOME/.config/hypr/monitor-config.conf && hyprctl reload"
+      "ln -sf $HOME/.config/hypr/monitor-config/default.conf $HOME/.config/hypr/monitor-config.conf && hyprctl reload && swww restore"
     ];
       
     bind = [

@@ -17,3 +17,4 @@ fi
 
 ln -sf "$NEXT_CONFIG" ~/.config/hypr/monitor-config.conf
 hyprctl reload
+swww restore

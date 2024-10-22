@@ -206,7 +206,9 @@
 		windowrulev2 = [
 			# no opcacity for windows with "Meet" in title
 			"opacity 1.0 override,title:^meet\.google\.com.*$"
+			"opacity 1.0 override,title:^Meet.*$"
 			"opacity 1.0 override,title:^YouTube.*$"
+			"opacity 1.0 override,title:^.*youtube.com$"
 			"suppressevent maximize, class:.*" # You'll probably like this.
 		];
   };

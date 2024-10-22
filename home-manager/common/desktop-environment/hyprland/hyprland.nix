@@ -10,8 +10,6 @@
   };
 
   wayland.windowManager.hyprland.settings = {
-    inherit (machine-config.hyprland) monitor;
-
     "$terminal" = "alacritty";
     "$fileManager" = "nautilus";
     "$browser" = "chromium";
@@ -96,6 +94,7 @@
     misc = { 
       force_default_wallpaper = -1; # Set to 0 or 1 to disable the anime mascot wallpapers
       disable_hyprland_logo = true; # If true disables the random hyprland logo / anime girl background. :(
+      no_direct_scanout = true;
     };
 
     # https://wiki.hyprland.org/Configuring/Variables/#input
@@ -200,6 +199,8 @@
 			"float,^(blueman-manager)$"
 			"float,^(nm-connection-editor)$"
 			"float,^(qalculate-gtk)$"
+      "float,^(steam_app_.*)$"
+      "float,^(steam_proton$"
 		];
 		
 		windowrulev2 = [

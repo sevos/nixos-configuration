@@ -137,11 +137,17 @@
     };
   };
 
-  hyprland.monitor = [
-    "DP-1, 3840x2160@144, 0x0, 2"
-    # ((3840 / 2) - (3840 / 3)) / 2 = 320 - this horizontally centers both screens
-    "HDMI-A-1, 3840x2160@144, 320x-720, 3"
-  ];
+  hyprland.monitor-config = {
+    default = [
+      "DP-1, 3840x2160@144, 0x0, 2"
+      # ((3840 / 2) - (3840 / 3)) / 2 = 320 - this horizontally centers both screens
+      "HDMI-A-1, 3840x2160@144, 320x-720, 3"
+    ];
+    games = [
+      "DP-1, 3840x2160@144, 0x0, 1"
+    ];
+  };
+
 
   hyprland.workspace = [
     "name:Top, monitor:HDMI-A-1, default:true"

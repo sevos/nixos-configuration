@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./monitor-config
     ./hyprland.nix
     ./clipboard.nix
   ];

@@ -2,13 +2,16 @@
 with lib;
 {
   options.hyprland = {
-    monitor = mkOption {
-      type = types.listOf(types.str);
-      default = [",preferred, auto, auto"];
-    };
     workspace = mkOption {
       type = types.listOf(types.str);
       default = [];
+    };
+
+    monitor-config = lib.mkOption {
+      type = lib.types.attrsOf(lib.types.listOf(lib.types.str));
+      default = {
+        default = [",preferred, auto, auto"];
+      };
     };
   };
 }

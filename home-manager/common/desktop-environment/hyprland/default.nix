@@ -5,6 +5,7 @@
     ./monitor-config
     ./hyprland.nix
     ./clipboard.nix
+    ./hyprshot.nix
   ];
 
   home.packages = with pkgs; [

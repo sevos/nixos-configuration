@@ -23,8 +23,9 @@
       CPU_BOOST_ON_AC = 1;
       CPU_BOOST_ON_BAT = 0;
 
-      START_CHARGE_THRESH_BAT0 = 40;
-      STOP_CHARGE_THRESH_BAT0 = 80;
+      # Works on ThinkPads only
+      # START_CHARGE_THRESH_BAT0 = 40;
+      # STOP_CHARGE_THRESH_BAT0 = 80;
 
       PLATFORM_PROFILE_ON_AC = "performance";
       PLATFORM_PROFILE_ON_BAT = "balanced";

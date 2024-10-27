@@ -77,7 +77,9 @@
     yarn
 
     # Ruby 3.3
-    ruby_3_3
+    (ruby_3_3.withPackages (p: with p; [
+      bundler
+    ]))
     libyaml
 
     # Nil lang

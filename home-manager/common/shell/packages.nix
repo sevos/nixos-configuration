@@ -78,6 +78,7 @@
 
     # Ruby 3.3
     ruby_3_3
+    libyaml
 
     # Nil lang
     nil

@@ -8,6 +8,7 @@
     ./virtualisation
     ./printing.nix
     ./stylix
+    ./firewall.nix
   ];
 
   nix.settings.trusted-users = [

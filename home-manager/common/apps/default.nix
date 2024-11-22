@@ -6,5 +6,6 @@
     ./slack.nix
     ./cursorai.nix
     ./distrobox.nix
+    ./whatsapp.nix
   ];
 }

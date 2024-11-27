@@ -6,7 +6,7 @@
   stylix = {
     enable = true;
     polarity = "dark";
-    image = lib.mkDefault ../../../style/wallpapers/b0ek3ocp4rud1.png
+    image = lib.mkDefault ../../../style/wallpapers/b0ek3ocp4rud1.png;
     
     base16Scheme = ../../../style/tokyo-dark.yaml;
 

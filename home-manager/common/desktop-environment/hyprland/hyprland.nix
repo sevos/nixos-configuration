@@ -17,16 +17,16 @@
     "$menu" = "ulauncher-toggle";
 
     env = [
-      "XCURSORSIZE, 36"
+      "XCURSORSIZE, 24"
       "XCURSORTHEME, Adwaita"
-      "HYPRCURSOR_SIZE, 36"
+      "HYPRCURSOR_SIZE, 24"
       "HYPRCURSOR_THEME, Adwaita"
       "GSK_RENDERER, ngl"
     ];
 
     exec-once = [
       "xdg-settings set default-web-browser org.chromium.Chromium.desktop"
-      "hyprctl setcursor Adwaita 36"
+      "hyprctl setcursor Adwaita 24"
       "dunst & hypridle & swww-daemon &"
       "nm-applet"
       "sh $HOME/.config/waybar/waybar-wrapper.sh"

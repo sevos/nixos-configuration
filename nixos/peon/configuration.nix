@@ -101,7 +101,6 @@
 
     opengl = {
       enable = true;
-      driSupport = true;
     };
   };
 

@@ -54,9 +54,6 @@
       active_opacity = 1.0;
       inactive_opacity = 0.7;
 
-      drop_shadow = true;
-      shadow_range = 4;
-      shadow_render_power = 3;
       blur = {
         enabled = true;
         size = 4;
@@ -94,7 +91,7 @@
     misc = { 
       force_default_wallpaper = -1; # Set to 0 or 1 to disable the anime mascot wallpapers
       disable_hyprland_logo = true; # If true disables the random hyprland logo / anime girl background. :(
-      no_direct_scanout = true;
+      # no_direct_scanout = true;
     };
 
     # https://wiki.hyprland.org/Configuring/Variables/#input

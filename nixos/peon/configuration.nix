@@ -29,6 +29,7 @@
     ./hardware-configuration.nix
     # Power management
     ./power.nix
+    ./ai.nix
   ];
 
   nixpkgs = {

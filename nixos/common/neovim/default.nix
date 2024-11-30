@@ -15,6 +15,7 @@ in
 
   programs.nixvim = {
     enable = true;
+    colorschemes.tokyonight.enable = true;
 
     defaultEditor = true;
     viAlias = true;
@@ -67,6 +68,7 @@ in
       which-key.enable = true;
       gitsigns.enable = true;
       lazygit.enable = true;
+      nvim-tree.enable = true;
 
       telescope = {
         enable = true;
@@ -186,12 +188,23 @@ in
 
     keymaps = [
       {
-        action = "<cmd>Telescope live_grep<CR>";
-        key = "<leader>g";
+        action = "<cmd>NvimTreeToggle<CR>";
+        key = "<leader>e";
       }
+
+      {
+        action = "<cmd>write<CR>";
+        key = "<C-s>";
+      }
+
+      {
+        action = "<cmd>Telescope live_grep<CR>";
+        key = "<leader>/";
+      }
+
       {
         action = "<cmd>Telescope find_files<CR>";
-        key = "<leader>f";
+        key = "<leader><leader>";
       }
 
       {
@@ -235,25 +248,41 @@ in
         key = "<leader>ac";
         action = "<cmd>CopilotChatCommit<cr>";
       }
+
+      {
+        mode ="n";
+        key = "<leader>a";
+        action = "<cmd>CopilotChatToggle<cr>";
+      }
+
       {
         mode = "n";
         key = "//";
         action = "<cmd>Commentary<cr>";
       }
+
       {
         mode = "v";
         key = "//";
         action = "<cmd>'<,'>Commentary<cr>";
       }
+
       {
         mode = "v";
         key = "<";
         action = "<gv";
       }
+
       {
         mode = "v";
         key = ">";
         action = ">gv";
+      }
+
+      {
+        mode = "n";
+        key = "<leader>g";
+        action = "<cmd>LazyGit<CR>";
       }
     ];
 

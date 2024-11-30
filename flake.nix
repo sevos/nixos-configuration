@@ -15,12 +15,18 @@
 
     alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
     stylix.url = "github:danth/stylix";
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
     stylix,
+    nixvim,
     home-manager,
     ...
   } @ inputs: let
@@ -61,6 +67,7 @@
         modules = [
           # > Our main nixos configuration file <
           stylix.nixosModules.stylix
+	  nixvim.nixosModules.nixvim
           ./nixos/tuxedo/configuration.nix
         ];
       };
@@ -69,6 +76,7 @@
         modules = [
           # > Our main nixos configuration file <
           stylix.nixosModules.stylix
+	  nixvim.nixosModules.nixvim
           ./nixos/peon/configuration.nix
         ];
       };

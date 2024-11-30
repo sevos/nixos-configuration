@@ -193,18 +193,18 @@ in
     keymaps = [
       {
         key = "<leader>qq";
-        description = "Quit all without saving";
+        options = { desc = "Quit all without saving"; };
         action = "<cmd>qa!<CR>";
       }
 
       {
         key = "<leader>qx";
-        description = "Save all and quit";
+        options = { desc = "Save all and quit"; };
         action = "<cmd>xa<CR>";
       }
 
       {
-        description = "List and switch buffer";
+        options = { desc = "List and switch buffer"; };
         key = "<leader>,";
         action = "<cmd>Telescope buffers<CR>";
       }
@@ -212,11 +212,11 @@ in
       {
         key = "<leader>bd";
         action = "<cmd>bd<CR>";
-        desc = "Delete current buffer";
+        options = { desc = "Delete current buffer"; };
       }
 
       {
-        description = "Delete other buffers";
+        options = { desc = "Delete other buffers"; };
         action = "<cmd>BufOnly<CR>";
         key = "<leader>bo";
       }

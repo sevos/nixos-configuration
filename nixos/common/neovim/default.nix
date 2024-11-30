@@ -68,7 +68,11 @@ in
       which-key.enable = true;
       gitsigns.enable = true;
       lazygit.enable = true;
-      nvim-tree.enable = true;
+      nvim-tree = {
+        enable = true;
+        openOnSetup = true;
+        openOnSetupFile = true;
+      };
 
       telescope = {
         enable = true;
@@ -187,6 +191,36 @@ in
     };
 
     keymaps = [
+      {
+        key = "<leader>qq";
+        description = "Quit all without saving";
+        action = "<cmd>qa!<CR>";
+      }
+
+      {
+        key = "<leader>qx";
+        description = "Save all and quit";
+        action = "<cmd>xa<CR>";
+      }
+
+      {
+        description = "List and switch buffer";
+        key = "<leader>,";
+        action = "<cmd>Telescope buffers<CR>";
+      }
+
+      {
+        key = "<leader>bd";
+        action = "<cmd>bd<CR>";
+        desc = "Delete current buffer";
+      }
+
+      {
+        description = "Delete other buffers";
+        action = "<cmd>BufOnly<CR>";
+        key = "<leader>bo";
+      }
+
       {
         action = "<cmd>NvimTreeToggle<CR>";
         key = "<leader>e";

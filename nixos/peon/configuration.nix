@@ -5,7 +5,6 @@
   outputs,
   lib,
   config,
-  pkgs,
   ...
 }: {
   # You can import other NixOS modules here
@@ -78,7 +77,7 @@
   };
 
   networking.hostName = "peon";
-  boot.kernelPackages = pkgs.linuxPackages_6_11;
+ 
   boot.kernelParams = [ "nvidia_drm.fbdev=1" "nvidia-drm.modeset=1" "module_blacklist=i915,nouveau" ];
   services.xserver.videoDrivers = [ "nvidia" ];
 

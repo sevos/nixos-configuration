@@ -7,5 +7,6 @@
     ./cursorai.nix
     ./distrobox.nix
     ./whatsapp.nix
+    ./spotify.nix
   ];
 }

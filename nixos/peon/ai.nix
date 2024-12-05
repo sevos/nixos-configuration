@@ -7,4 +7,8 @@
       acceleration = "cuda";
       host = "0.0.0.0";
   };
+
+  environment.systemPackages = with pkgs; [
+    openai-whisper
+  ];
 }

@@ -1,15 +1,14 @@
 { pkgs, lib, ...}: 
 let
-  copilotChatRepo = {
-    owner = "copilotc-nvim";
-    repo = "CopilotChat.nvim";
-    rev = "23545dc12dd6fa272eba35c88a2404a4f90a88b1";
-    hash = "sha256-HtgWAPQ55o11s+XWFOybAaWMRjZ4iysajq48YHWxhX4=";
+  codeCompanionRepo = {
+    owner = "olimorris";
+    repo = "codecompanion.nvim";
+    rev = "39a2e19e3e82e48debaddf9f88d59d3d6cb2a341";
+    hash = "sha256-8Q12vawHvr/2YCqPGvU+EB43Zixtmm9ZNAw9/1QQloI=";
   };
 in
 {
   environment.systemPackages = with pkgs; [
-    github-copilot-cli
     lynx
   ];
 
@@ -131,12 +130,6 @@ in
       cmp-path = {enable = true;}; 
       cmp_luasnip = {enable = true;}; 
       cmp-cmdline = {enable = false;};
-      copilot-cmp = {enable = true;};
-      copilot-lua = {
-        enable = true;
-        suggestion = {enabled = false;};
-        panel = {enabled = false;};
-      };
 
       cmp = {
         enable = true;
@@ -159,7 +152,6 @@ in
               option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
             keywordLength = 3;
           }
-          {name = "copilot";}
           {
             name = "path";
             keywordLength = 3;
@@ -254,42 +246,6 @@ in
       }
 
       {
-        mode = "x";
-        key = "<leader>a";
-        action = "+copilot";
-      }
-
-      {
-        mode = "x";
-        key = "<leader>ae";
-        action = "<cmd>CopilotChatExplain<cr>";
-      }
-
-      {
-        mode = "x";
-        key = "<leader>af";
-        action = "<cmd>CopilotChatFix<cr>";
-      }
-
-      {
-        mode = "x";
-        key = "<leader>ad";
-        action = "<cmd>CopilotChatDocs<cr>";
-      }
-
-      {
-        mode = "x";
-        key = "<leader>ac";
-        action = "<cmd>CopilotChatCommit<cr>";
-      }
-
-      {
-        mode ="n";
-        key = "<leader>a";
-        action = "<cmd>CopilotChatToggle<cr>";
-      }
-
-      {
         mode = "n";
         key = "//";
         action = "<cmd>Commentary<cr>";
@@ -318,6 +274,36 @@ in
         key = "<leader>g";
         action = "<cmd>LazyGit<CR>";
       }
+      {
+        mode = [
+          "n"
+          "v"
+        ];
+        key = "<leader>a";
+        action = "CodeCompanion";
+        options = {
+          silent = true;
+          desc = "+codecompanion";
+        };
+      }
+      {
+        key = "<leader>ac";
+        action = ":CodeCompanionToggle<CR>";
+        mode = "n";
+        options = {
+          silent = true;
+          desc = "Toggle CodeCompanion";
+        };
+      }
+      {
+        key = "<leader>af";
+        action = ":CodeCompanionActions<CR>";
+        mode = "n";
+        options = {
+          silent = true;
+          desc = "CodeCompanion Actions";
+        };
+      }
     ];
 
     extraPackages = with pkgs; [
@@ -326,26 +312,20 @@ in
 
     extraPlugins = with pkgs.vimUtils; with pkgs.vimPlugins; [
       vim-toml file-line vim-gitgutter plenary-nvim nvim-colorizer-lua
-
         (buildVimPlugin {
-         pname = "copilotchat";
-         version = "1.9.0";
-         src = pkgs.fetchFromGitHub copilotChatRepo;
+         pname = "codecompanion";
+         version = "10.4.0";
+         src = pkgs.fetchFromGitHub codeCompanionRepo;
          meta = {
-         description = "Chat with GitHub Copilot in Neovim";
-         homepage = "https://github.com/CopilotC-Nvim/CopilotChat.nvim/";
+         description = "Code companion";
+         homepage = "https://github.com/olimorris/codecompanion.nvim";
          license = lib.licenses.gpl3;
          };
          })
     ];
 
     extraConfigLua = ''
-      require("copilot").setup({
-          suggestion = { enabled = false },
-          panel = { enabled = false },
-          })
-
-      require("CopilotChat").setup { }
+      require("codecompanion").setup()
 
       require 'colorizer'.setup()
 

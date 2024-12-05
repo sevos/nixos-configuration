@@ -53,6 +53,11 @@
   };
 
   heymail.enable = true;
+  basecamp = {
+    enable = true;
+    url = "https://3.basecamp.com/5752909";
+  };
+
   wfirma.enable = true;
   programs.git.userEmail = "sevos@hey.com";
 

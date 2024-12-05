@@ -8,5 +8,6 @@
     ./distrobox.nix
     ./whatsapp.nix
     ./spotify.nix
+    ./basecamp
   ];
 }

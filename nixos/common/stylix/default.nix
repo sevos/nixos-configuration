@@ -22,7 +22,7 @@
       };
 
       monospace = {
-        package = (pkgs.unstable.nerdfonts.override { fonts = [ "CascadiaMono" "CascadiaCode"]; });
+        package = (pkgs.unstable.nerd-fonts.caskaydia-mono);
         name = "CaskaydiaMono Nerd Font";
       };
 

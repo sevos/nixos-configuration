@@ -1,6 +1,7 @@
 { pkgs, lib, ...}: 
 {
   environment.systemPackages = with pkgs; [
+    lynx
     lua-language-server
     ruby
     solargraph # Ruby language server

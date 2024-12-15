@@ -100,7 +100,7 @@
       };
     };
 
-    opengl = {
+    graphics = {
       enable = true;
     };
   };

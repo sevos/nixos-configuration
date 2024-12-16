@@ -96,6 +96,11 @@
 
       # AI
       codecompanion-nvim
+
+      # Rails
+      vim-rails
+      neotest
+      neotest-minitest
     ];
   
     extraLuaConfig = ''

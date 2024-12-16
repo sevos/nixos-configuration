@@ -7,5 +7,6 @@
     ./browser
     ./desktop-environment/hyprland
     ./apps
+    ./neovim
   ];
 }

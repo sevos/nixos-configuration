@@ -12,7 +12,7 @@
     vimdiffAlias = true;
     withNodeJs = true;
 
-    plugins = with pkgs.vimPlugins; [
+    plugins = with pkgs.unstable.vimPlugins; [
       # base distro
       LazyVim
       conform-nvim
@@ -22,6 +22,11 @@
       headlines-nvim
       indent-blankline-nvim
       persistence-nvim
+      mini-starter
+      mini-ai
+      mini-pairs
+      mini-animate
+      vim-repeat
 
       # UI
       tokyonight-nvim
@@ -105,8 +110,8 @@
           { import = "lazyvim.plugins.extras.lang.rust" },
           { import = "lazyvim.plugins.extras.lang.yaml" },
           { import = "lazyvim.plugins.extras.test.core" },
-          { import = "lazyvim.plugins.extras.ui.mini-starter" },
           { import = "lazyvim.plugins.extras.ui.mini-animate" },
+          { import = "lazyvim.plugins.ui" },
           -- Import plugins from lua/plugins
           { import = "plugins" },
         },
@@ -128,7 +133,7 @@
               "gzip",
               -- "matchit",
               -- "matchparen",
-              -- "netrwPlugin",
+              "netrwPlugin",
               "tarPlugin",
               "tohtml",
               "tutor",

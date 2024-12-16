@@ -157,6 +157,11 @@
           missing = false,
         },
       })
+
+      vim.opt.relativenumber = false
+      -- enable automatic newline at end of the file
+      vim.opt.eol = true
+      vim.opt.fixendofline = true
     '';
 
     extraPackages = with pkgs; [

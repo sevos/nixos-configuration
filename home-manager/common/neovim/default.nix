@@ -75,6 +75,7 @@
       # snippets
       luasnip # snippet engine
       friendly-snippets # a bunch of snippets to use
+      nvim-snippets
 
       # search functionality
       plenary-nvim
@@ -89,6 +90,9 @@
       todo-comments-nvim
 
       lazy-nvim
+
+      # AI
+      codecompanion-nvim
     ];
   
     extraLuaConfig = ''

@@ -18,14 +18,16 @@
       conform-nvim
       nvim-lint
       markdown-preview-nvim
+      render-markdown-nvim
       headlines-nvim
+      indent-blankline-nvim
+      persistence-nvim
 
       # UI
       tokyonight-nvim
       bufferline-nvim
       gitsigns-nvim
       edgy-nvim
-      dashboard-nvim
       toggleterm-nvim
       trouble-nvim
       lualine-nvim
@@ -96,12 +98,14 @@
           { import = "lazyvim.plugins.extras.editor.aerial" },
           { import = "lazyvim.plugins.extras.editor.leap" },
           { import = "lazyvim.plugins.extras.editor.navic" },
+          { import = "lazyvim.plugins.extras.editor.illuminate" },
           { import = "lazyvim.plugins.extras.lang.docker" },
           { import = "lazyvim.plugins.extras.lang.json" },
           { import = "lazyvim.plugins.extras.lang.markdown" },
           { import = "lazyvim.plugins.extras.lang.rust" },
           { import = "lazyvim.plugins.extras.lang.yaml" },
           { import = "lazyvim.plugins.extras.test.core" },
+          { import = "lazyvim.plugins.extras.ui.mini-starter" },
           { import = "lazyvim.plugins.extras.ui.mini-animate" },
           -- Import plugins from lua/plugins
           { import = "plugins" },
@@ -166,6 +170,9 @@
       # Custom
       editorconfig-checker
       shellcheck
+
+      # nix
+      statix
     ];
   };
 

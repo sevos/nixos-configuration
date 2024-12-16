@@ -48,6 +48,8 @@
       dressing-nvim
       aerial-nvim
       snacks-nvim
+      vim-illuminate
+
 
       # treesitter
       nvim-treesitter-context
@@ -71,6 +73,7 @@
       cmp-path # path completions
       cmp_luasnip # snipper completions
       cmp-nvim-lsp # LSP completions
+      lazydev-nvim
 
       # snippets
       luasnip # snippet engine

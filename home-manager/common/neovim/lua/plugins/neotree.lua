@@ -5,6 +5,9 @@ return {
       window = {
         width = 28,
       },
+      sources = {
+        "filesystem"
+      },
       filesystem = {
         filtered_items = {
           visible = true,

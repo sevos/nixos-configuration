@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{pkgs, config, ...}:
 {
 
   home.packages = with pkgs; [
@@ -11,6 +11,11 @@
     # custom settings
     settings = {
       env.TERM = "xterm-256color";
+
+      general.import = [
+        "~/.config/alacritty/themes/themes/tokyo-night.toml"
+      ];
+
       bell = {
         animation = "Ease";
         duration = 200;
@@ -20,6 +25,17 @@
         style = {
           shape = "Beam";
         };
+      };
+      font = {
+        normal.family = "CaskaydiaMono Nerd Font";
+        normal.style = "Regular";
+        bold.family = config.programs.alacritty.settings.font.normal.family;
+        bold.style = "Bold";
+        italic.family = config.programs.alacritty.settings.font.normal.family;
+        italic.style = "Italic";
+        bold_italic.family = config.programs.alacritty.settings.font.normal.family;
+        bold_italic.style = "Bold Italic";
+        size = 16;
       };
 
       window = {
@@ -36,6 +52,15 @@
           { key = "N"; mods = "Control|Shift"; action = "CreateNewWindow"; }
         ];
       };
+    };
+  };
+
+  stylix.targets.alacritty.enable = false;
+
+  xdg.configFile."alacritty/themes" = {
+    source = builtins.fetchGit {
+        url = "https://github.com/alacritty/alacritty-theme.git";
+        rev = "95a7d695605863ede5b7430eb80d9e80f5f504bc";
     };
   };
 }

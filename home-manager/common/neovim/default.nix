@@ -7,7 +7,6 @@ _: {
     ./snippets
     ./ui
     ./utils
-    ./oil.nix
   ];
 
   programs.nixvim = {

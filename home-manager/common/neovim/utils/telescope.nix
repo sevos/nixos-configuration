@@ -63,7 +63,7 @@
             desc = "Resume";
           };
         };
-        "<leader>fg" = {
+        "<leader>r" = {
           action = "oldfiles";
           options = {
             desc = "Recent";

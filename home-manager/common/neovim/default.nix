@@ -15,116 +15,49 @@
     plugins = with pkgs.unstable.vimPlugins; [
       # base distro
       LazyVim
-      conform-nvim
-      nvim-lint
-      markdown-preview-nvim
-      render-markdown-nvim
-      headlines-nvim
-      indent-blankline-nvim
-      persistence-nvim
-      mini-starter
-      mini-ai
-      mini-pairs
-      mini-animate
-      vim-repeat
+      oil-nvim
 
       # UI
-      tokyonight-nvim
-      bufferline-nvim
-      gitsigns-nvim
-      edgy-nvim
-      toggleterm-nvim
-      trouble-nvim
-      lualine-nvim
-      which-key-nvim
-      nvim-web-devicons
-      mini-nvim
-      noice-nvim
-      nui-nvim
-      nvim-notify
-      nvim-lsp-notify
-      neo-tree-nvim
-      nvim-navic
-      dressing-nvim
-      aerial-nvim
-      snacks-nvim
-      vim-illuminate
-
 
       # treesitter
       nvim-treesitter-context
-      nvim-ts-autotag
       nvim-treesitter-textobjects
       nvim-treesitter.withAllGrammars
 
       # LSP
       nvim-lspconfig
-      rust-tools-nvim
-      crates-nvim
-      null-ls-nvim
-      nvim-lightbulb # lightbulb for quick actions
-      # nvim-code-action-menu # code action menu
-      neodev-nvim
-      SchemaStore-nvim # load known formats for json and yaml
 
       # cmp plugins
-      nvim-cmp # completion plugin
-      cmp-buffer # buffer completions
-      cmp-path # path completions
-      cmp_luasnip # snipper completions
-      cmp-nvim-lsp # LSP completions
-      lazydev-nvim
+      nvim-cmp
+      luasnip
+      cmp-nvim-lsp
+      cmp_luasnip
 
       # snippets
-      luasnip # snippet engine
-      friendly-snippets # a bunch of snippets to use
-      nvim-snippets
+      friendly-snippets
+
 
       # search functionality
       plenary-nvim
       telescope-nvim
       telescope-fzf-native-nvim
-      nvim-spectre
-      flash-nvim
 
       # comments
-      nvim-ts-context-commentstring
-      ts-comments-nvim
-      todo-comments-nvim
-
-      lazy-nvim
 
       # AI
-      codecompanion-nvim
 
       # Rails
-      vim-ruby
-      vim-rails
-      neotest
-      neotest-minitest
+
+      # Others
+      direnv-vim
     ];
   
     extraLuaConfig = ''
       vim.g.mapleader = " " -- Need to set leader before lazy for correct keybindings
       require("lazy").setup({
         spec = {
-          { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+          -- { "LazyVim/LazyVim", import = "lazyvim.plugins" },
           -- import any extras modules here
-          { import = "lazyvim.plugins.extras.dap.core" },
-          { import = "lazyvim.plugins.extras.dap.nlua" },
-          { import = "lazyvim.plugins.extras.ui.edgy" },
-          { import = "lazyvim.plugins.extras.editor.aerial" },
-          { import = "lazyvim.plugins.extras.editor.leap" },
-          { import = "lazyvim.plugins.extras.editor.navic" },
-          { import = "lazyvim.plugins.extras.editor.illuminate" },
-          { import = "lazyvim.plugins.extras.lang.docker" },
-          { import = "lazyvim.plugins.extras.lang.json" },
-          { import = "lazyvim.plugins.extras.lang.markdown" },
-          { import = "lazyvim.plugins.extras.lang.rust" },
-          { import = "lazyvim.plugins.extras.lang.yaml" },
-          { import = "lazyvim.plugins.extras.lang.ruby" },
-          { import = "lazyvim.plugins.extras.test.core" },
-          { import = "lazyvim.plugins.ui" },
           -- Import plugins from lua/plugins
           { import = "plugins" },
         },
@@ -163,39 +96,14 @@
           missing = false,
         },
       })
-
-      vim.opt.relativenumber = false
-      -- enable automatic newline at end of the file
-      vim.opt.eol = true
-      vim.opt.fixendofline = true
     '';
 
     extraPackages = with pkgs; [
+      fd
       gcc # needed for nvim-treesitter
-
-      # LazyVim defaults
-      stylua
-      shfmt
-
-      # Markdown extra
-      nodePackages.markdownlint-cli
-      marksman
-
-      # Docker extra
-      nodePackages.dockerfile-language-server-nodejs
-      hadolint
-      docker-compose-language-service
-
-      # JSON and YAML extras
-      nodePackages.vscode-json-languageserver
-      nodePackages.yaml-language-server
-
-      # Custom
-      editorconfig-checker
-      shellcheck
-
-      # nix
-      statix
+      lua54Packages.luasnip
+      direnv
+      devenv
     ];
   };
 

@@ -6,7 +6,15 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
-      parser_install_dir = parser_install_dir,
     },
+    config = function()
+      local config = require("nvim-treesitter.configs")
+      config.setup({
+        auto_install = true,
+        parser_install_dir = parser_install_dir,
+        highlight = { enable = true },
+        indent = { enable = false },
+      })
+    end
   },
 }

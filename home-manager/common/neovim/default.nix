@@ -102,7 +102,6 @@
       vim-rails
       neotest
       neotest-minitest
-      rubyPackages_3_4.rubocop
     ];
   
     extraLuaConfig = ''

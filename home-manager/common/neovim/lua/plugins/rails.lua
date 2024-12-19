@@ -19,7 +19,7 @@ return {
             end,
           }),
           running = {
-            concurrent = false,
+            concurrent = true,
           },
         },
       })

@@ -98,9 +98,11 @@
       codecompanion-nvim
 
       # Rails
+      vim-ruby
       vim-rails
       neotest
       neotest-minitest
+      rubyPackages_3_4.rubocop
     ];
   
     extraLuaConfig = ''
@@ -121,8 +123,8 @@
           { import = "lazyvim.plugins.extras.lang.markdown" },
           { import = "lazyvim.plugins.extras.lang.rust" },
           { import = "lazyvim.plugins.extras.lang.yaml" },
+          { import = "lazyvim.plugins.extras.lang.ruby" },
           { import = "lazyvim.plugins.extras.test.core" },
-          -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
           { import = "lazyvim.plugins.ui" },
           -- Import plugins from lua/plugins
           { import = "plugins" },

@@ -21,7 +21,7 @@
 	         action = "live_grep";
            options.desc = "Grep in project";
         };
-        "<leader>e" = {
+        "<leader>r" = {
 	         mode = "n";
 	         action = "oldfiles";
            options.desc = "Recent files";

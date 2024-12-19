@@ -1,25 +1,6 @@
 {
   programs.nixvim = {
     plugins = {
-      nvim-autopairs = {
-        enable = true;
-        settings = {
-          disable_filetype = [
-            "TelescopePrompt"
-            "vim"
-          ];
-        };
-      };
-      lspkind = {
-        enable = true;
-        symbolMap = {
-          Copilot = " ";
-        };
-        extraOptions = {
-          maxwidth = 50;
-          ellipsis_char = "...";
-        };
-      };
       cmp-emoji = {
         enable = true;
       };
@@ -64,7 +45,7 @@
               keywordLength = 3;
             }
           ];
-  
+
           window = {
             completion = {
               border = "solid";
@@ -73,7 +54,7 @@
               border = "solid";
             };
           };
-  
+
           mapping = {
             "<C-Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
             "<C-j>" = "cmp.mapping.select_next_item()";
@@ -132,16 +113,16 @@
             Operator = " ",
             TypeParameter = " ",
           } 
-  
+
            local cmp = require'cmp'
-  
+
        -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
        cmp.setup.cmdline({'/', "?" }, {
          sources = {
            { name = 'buffer' }
          }
        })
-  
+
       -- Set configuration for specific filetype.
        cmp.setup.filetype('gitcommit', {
          sources = cmp.config.sources({
@@ -150,7 +131,7 @@
            { name = 'buffer' },
          })
        })
-  
+
        -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
        cmp.setup.cmdline(':', {
          sources = cmp.config.sources({
@@ -159,8 +140,5 @@
            { name = 'cmdline' }
          }),
        })  '';
-
-    keymaps = [
-    ];
   };
 }

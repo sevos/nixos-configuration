@@ -18,6 +18,7 @@
       oil-nvim
 
       # UI
+      which-key-nvim
 
       # treesitter
       nvim-treesitter-context

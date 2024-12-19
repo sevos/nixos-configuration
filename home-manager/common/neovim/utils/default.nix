@@ -1,5 +1,6 @@
 {
   imports = [
+    ./direnv.nix
     ./extra_plugins.nix
     ./markdown-preview.nix
     ./mini.nix

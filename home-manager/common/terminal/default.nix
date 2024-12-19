@@ -13,7 +13,7 @@
       env.TERM = "xterm-256color";
 
       general.import = [
-        "~/.config/alacritty/themes/themes/tokyo-night.toml"
+        "~/.config/alacritty/themes/themes/tokyo_night.toml"
       ];
 
       bell = {

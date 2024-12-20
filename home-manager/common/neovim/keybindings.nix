@@ -8,9 +8,12 @@
         action = ":confirm qa<CR>";
       }
       {
-        mode = "n";
+        mode = [
+          "n"
+          "i"
+        ];
         key = "<C-s>";
-        action = ":w<CR>";
+        action = "<esc>:w<cr>";
       }
     ];
   };

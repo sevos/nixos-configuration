@@ -7,6 +7,7 @@ _: {
     ./snippets
     ./ui
     ./utils
+    ./keybindings.nix
   ];
 
   programs.nixvim = {

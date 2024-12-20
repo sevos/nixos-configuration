@@ -128,6 +128,7 @@
             "shfmt"
           ];
           json = [ "jq" ];
+          ruby = [ "rubocop" ];
           "_" = [ "trim_whitespace" ];
         };
 
@@ -164,6 +165,9 @@
           };
           bicep = {
             command = "${lib.getExe pkgs.bicep}";
+          };
+          rubocop = {
+            command = "${lib.getExe pkgs.rubyPackages.rubocop} -a";
           };
           #yamlfmt = {
           #  command = "${lib.getExe pkgs.yamlfmt}";

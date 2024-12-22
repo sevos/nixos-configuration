@@ -3,7 +3,8 @@
     enable = true;
     extensions = [
       "aeblfdkhhhdcdjpifhhbdiojplfjncoa" # 1password
-			"ddkjiahejlhfcafbddmgiahcphecmpfh" # uBlock Origin Lite
+      "ddkjiahejlhfcafbddmgiahcphecmpfh" # uBlock Origin Lite
+      "kbfnbcaeplbcioakkpcpgfkobkghlhen" # Grammarly
     ];
   };
 }

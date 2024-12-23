@@ -6,7 +6,8 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   # You can import other NixOS modules here
   imports = [
     inputs.home-manager.nixosModules.home-manager
@@ -21,6 +22,7 @@
     # You can also split up your configuration and import pieces of it here:
     ../common/optional/bootloader/uefi.nix
     ../common/optional/desktop-environment/hyprland
+    ../common/optional/steam
     ../common
 
     # Import your generated (nixos-generate-config) hardware configuration
@@ -53,24 +55,26 @@
     };
   };
 
-  nix = let
-    flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
-  in {
-    settings = {
-      # Enable flakes and new 'nix' command
-      experimental-features = "nix-command flakes";
-      # Opinionated: disable global registry
-      flake-registry = "";
-      # Workaround for https://github.com/NixOS/nix/issues/9574
-      nix-path = config.nix.nixPath;
-    };
-    # Opinionated: disable channels
-    channel.enable = false;
+  nix =
+    let
+      flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
+    in
+    {
+      settings = {
+        # Enable flakes and new 'nix' command
+        experimental-features = "nix-command flakes";
+        # Opinionated: disable global registry
+        flake-registry = "";
+        # Workaround for https://github.com/NixOS/nix/issues/9574
+        nix-path = config.nix.nixPath;
+      };
+      # Opinionated: disable channels
+      channel.enable = false;
 
-    # Opinionated: make flake registry and nix path match flake inputs
-    registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
-    nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
-  };
+      # Opinionated: make flake registry and nix path match flake inputs
+      registry = lib.mapAttrs (_: flake: { inherit flake; }) flakeInputs;
+      nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
+    };
 
   hardware.tuxedo-rs = {
     enable = true;
@@ -78,7 +82,7 @@
   };
 
   # add acpi.ec_no_wakeup=1 to kernel parameters to fix suspend on Tuxedo
-  boot.kernelParams = ["acpi.ec_no_wakeup=1"];
+  boot.kernelParams = [ "acpi.ec_no_wakeup=1" ];
 
   networking.hostName = "tuxedo";
 
@@ -109,7 +113,10 @@
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
       ];
-      extraGroups = ["networkmanager" "wheel"];
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+      ];
     };
 
     zencargo = {
@@ -118,13 +125,16 @@
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
       ];
-      extraGroups = ["networkmanager" "wheel"];
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+      ];
     };
   };
 
   home-manager = {
-    extraSpecialArgs = { 
-      inherit inputs outputs; 
+    extraSpecialArgs = {
+      inherit inputs outputs;
       machine-config = config;
     };
     users = {

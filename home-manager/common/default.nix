@@ -1,4 +1,4 @@
-{inputs, ...}:
+{ inputs, ... }:
 {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
@@ -8,6 +8,7 @@
     ./shell
     ./browser
     ./desktop-environment/hyprland
+    ./desktop-environment/ignis
     ./apps
     ./neovim
   ];

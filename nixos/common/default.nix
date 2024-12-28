@@ -1,4 +1,4 @@
-{...}:
+{ ... }:
 
 {
   imports = [
@@ -8,6 +8,7 @@
     ./printing.nix
     ./stylix
     ./firewall.nix
+    ./bluetooth.nix
   ];
 
   nix.settings.trusted-users = [

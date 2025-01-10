@@ -6,7 +6,8 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   # You can import other NixOS modules here
   imports = [
     inputs.home-manager.nixosModules.home-manager
@@ -57,28 +58,34 @@
     };
   };
 
-  nix = let
-    flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
-  in {
-    settings = {
-      # Enable flakes and new 'nix' command
-      experimental-features = "nix-command flakes";
-      # Opinionated: disable global registry
-      flake-registry = "";
-      # Workaround for https://github.com/NixOS/nix/issues/9574
-      nix-path = config.nix.nixPath;
-    };
-    # Opinionated: disable channels
-    channel.enable = false;
+  nix =
+    let
+      flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
+    in
+    {
+      settings = {
+        # Enable flakes and new 'nix' command
+        experimental-features = "nix-command flakes";
+        # Opinionated: disable global registry
+        flake-registry = "";
+        # Workaround for https://github.com/NixOS/nix/issues/9574
+        nix-path = config.nix.nixPath;
+      };
+      # Opinionated: disable channels
+      channel.enable = false;
 
-    # Opinionated: make flake registry and nix path match flake inputs
-    registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
-    nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
-  };
+      # Opinionated: make flake registry and nix path match flake inputs
+      registry = lib.mapAttrs (_: flake: { inherit flake; }) flakeInputs;
+      nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
+    };
 
   networking.hostName = "peon";
- 
-  boot.kernelParams = [ "nvidia_drm.fbdev=1" "nvidia-drm.modeset=1" "module_blacklist=i915,nouveau" ];
+
+  boot.kernelParams = [
+    "nvidia_drm.fbdev=1"
+    "nvidia-drm.modeset=1"
+    "module_blacklist=i915,nouveau"
+  ];
   services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware = {
@@ -86,7 +93,7 @@
       modesetting.enable = true;
       powerManagement = {
         enable = true;
-      	finegrained = false;
+        finegrained = false;
       };
       open = false;
       nvidiaSettings = true;
@@ -112,7 +119,10 @@
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
       ];
-      extraGroups = ["networkmanager" "wheel"];
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+      ];
     };
 
     zencargo = {
@@ -121,13 +131,16 @@
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
       ];
-      extraGroups = ["networkmanager" "wheel"];
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+      ];
     };
   };
 
   home-manager = {
-    extraSpecialArgs = { 
-      inherit inputs outputs; 
+    extraSpecialArgs = {
+      inherit inputs outputs;
       machine-config = config;
     };
     users = {
@@ -143,12 +156,15 @@
       # ((3840 / 2) - (3840 / 3)) / 2 = 320 - this horizontally centers both screens
       "HDMI-A-1, 3840x2160@144, 320x-720, 3"
     ];
+    mirror = [
+      "DP-1, 3840x2160@144, 0x0, 2"
+      "HDMI-A-1, preferred, auto, 2, mirror, DP-1"
+    ];
     games = [
       "DP-1, 3840x2160@144, 0x0, 1"
       "HDMI-A-1, disable"
     ];
   };
-
 
   hyprland.workspace = [
     "name:Top, monitor:HDMI-A-1, default:true"

@@ -11,5 +11,6 @@
     ./desktop-environment/ignis
     ./apps
     ./neovim
+    ./vlc
   ];
 }

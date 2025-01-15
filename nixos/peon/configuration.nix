@@ -117,11 +117,12 @@
       description = "Artur Roszczyk";
       initialPassword = "qwerty";
       isNormalUser = true;
-      openssh.authorizedKeys.keys = [
-      ];
       extraGroups = [
         "networkmanager"
         "wheel"
+      ];
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIExyXjEYs7lfRDR30HgnzvHMGR15OKoOEXmm1fgJmeJS"
       ];
     };
 

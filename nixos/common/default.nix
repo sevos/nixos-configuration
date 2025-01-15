@@ -7,6 +7,7 @@
     ./virtualisation
     ./printing.nix
     ./stylix
+    ./dns.nix
     ./firewall.nix
     ./bluetooth.nix
   ];

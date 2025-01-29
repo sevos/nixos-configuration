@@ -1,9 +1,9 @@
-{pkgs, config, ...}:
+{ pkgs, config, ... }:
 {
 
   home.packages = with pkgs; [
     alacritty
-    nerdfonts
+    nerd-fonts.caskaydia-mono
   ];
 
   programs.alacritty = {
@@ -39,7 +39,10 @@
       };
 
       window = {
-        padding = { x = 10; y = 10; };
+        padding = {
+          x = 10;
+          y = 10;
+        };
       };
 
       scrolling.multiplier = 5;
@@ -49,7 +52,11 @@
       };
       keyboard = {
         bindings = [
-          { key = "N"; mods = "Control|Shift"; action = "CreateNewWindow"; }
+          {
+            key = "N";
+            mods = "Control|Shift";
+            action = "CreateNewWindow";
+          }
         ];
       };
     };
@@ -59,8 +66,8 @@
 
   xdg.configFile."alacritty/themes" = {
     source = builtins.fetchGit {
-        url = "https://github.com/alacritty/alacritty-theme.git";
-        rev = "95a7d695605863ede5b7430eb80d9e80f5f504bc";
+      url = "https://github.com/alacritty/alacritty-theme.git";
+      rev = "95a7d695605863ede5b7430eb80d9e80f5f504bc";
     };
   };
 }

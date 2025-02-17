@@ -101,7 +101,6 @@
       python312Packages.pypdf
       python312Packages.sqlalchemy
       python312Packages.fastapi
-      python312Packages.phi
       python312Packages.youtube-transcript-api
     ]
   );

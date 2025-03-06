@@ -9,6 +9,7 @@
     ./browser
     ./desktop-environment/hyprland
     ./desktop-environment/ignis
+    ./vscode.nix
     ./apps
     ./neovim
     ./vlc

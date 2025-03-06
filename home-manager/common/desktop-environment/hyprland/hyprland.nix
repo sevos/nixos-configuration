@@ -1,4 +1,4 @@
-{machine-config, pkgs, ...}:
+{ machine-config, pkgs, ... }:
 {
 
   home.file."Obrazy/Wallpapers" = {
@@ -7,6 +7,10 @@
 
   home.file.".config/hypr/hypridle.conf" = {
     source = ./hypridle.conf;
+  };
+
+  home.file.".config/hypr/hyprlock.conf" = {
+    source = ./hyprlock.conf;
   };
 
   wayland.windowManager.hyprland.settings = {
@@ -27,11 +31,12 @@
     exec-once = [
       "xdg-settings set default-web-browser org.chromium.Chromium.desktop"
       "hyprctl setcursor Adwaita 24"
-      "dunst & hypridle & swww-daemon &"
+      "dunst & swww-daemon &"
       "nm-applet"
       "sh $HOME/.config/waybar/waybar-wrapper.sh"
       "1password --silent"
       "ulauncher --hide-window --no-window-shadow"
+      "hypridle"
     ];
 
     workspace = [
@@ -60,8 +65,8 @@
         passes = 2;
         vibrancy = 0.1696;
       };
-    };  
-     # https://wiki.hyprland.org/Configuring/Variables/#animations
+    };
+    # https://wiki.hyprland.org/Configuring/Variables/#animations
     animations = {
       enabled = true;
       # Default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
@@ -75,8 +80,8 @@
         "workspaces, 1, 6, default"
       ];
     };
-    
-    # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more    
+
+    # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
     dwindle = {
       pseudotile = true; # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
       preserve_split = true; # You probably want this
@@ -88,7 +93,7 @@
     };
 
     # https://wiki.hyprland.org/Configuring/Variables/#misc
-    misc = { 
+    misc = {
       force_default_wallpaper = -1; # Set to 0 or 1 to disable the anime mascot wallpapers
       disable_hyprland_logo = true; # If true disables the random hyprland logo / anime girl background. :(
       # no_direct_scanout = true;
@@ -107,16 +112,16 @@
       sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
 
       touchpad = {
-          natural_scroll = true;
-          scroll_factor = 0.6;
-          drag_lock = true;
+        natural_scroll = true;
+        scroll_factor = 0.6;
+        drag_lock = true;
       };
     };
 
     # https://wiki.hyprland.org/Configuring/Variables/#gestures
     gestures = {
-        workspace_swipe = true;
-        workspace_swipe_fingers = 3;
+      workspace_swipe = true;
+      workspace_swipe_fingers = 3;
     };
 
     "$mainMod" = "SUPER";
@@ -140,7 +145,7 @@
       "$mainMod, right, movefocus, r"
       "$mainMod, up, movefocus, u"
       "$mainMod, down, movefocus, d"
-      
+
       # Switch workspacEs with mainMod + [0-9]
       "$mainMod, code:49, workspace, name:Top"
       "$mainMod, 1, workspace, 1"
@@ -169,44 +174,43 @@
 
       "$mainMod, C, togglespecialworkspace, chatgpt"
 
-			# Scroll through existing workspaces with mainMod + scroll
-			"$mainMod, mouse_down, workspace, e+1"
-			"$mainMod, mouse_up, workspace, e-1"
+      # Scroll through existing workspaces with mainMod + scroll
+      "$mainMod, mouse_down, workspace, e+1"
+      "$mainMod, mouse_up, workspace, e-1"
     ];
 
-		bindm = [
-			# Move/resize windows with mainMod + LMB/RMB and dragging
-			"$mainMod, mouse:272, movewindow"
-			"$mainMod, mouse:273, resizewindow"
-		];
+    bindm = [
+      # Move/resize windows with mainMod + LMB/RMB and dragging
+      "$mainMod, mouse:272, movewindow"
+      "$mainMod, mouse:273, resizewindow"
+    ];
 
-		bindel = [
-			# Laptop multimedia keys for volume and LCD brightness
-			",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-			",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-			",XF86AudioMute, exec, wpctl set-mute @DEFAULT_0AUDIO_SINK@ toggle"
-			",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-			",XF86MonBrightnessUp, exec, brightnessctl s 10%+"
-			",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
-		];
+    bindel = [
+      # Laptop multimedia keys for volume and LCD brightness
+      ",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+      ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+      ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_0AUDIO_SINK@ toggle"
+      ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+      ",XF86MonBrightnessUp, exec, brightnessctl s 10%+"
+      ",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
+    ];
 
-
-		windowrule = [
-			"float,^(pavucontrol)$"
-			"float,^(blueman-manager)$"
-			"float,^(nm-connection-editor)$"
-			"float,^(qalculate-gtk)$"
+    windowrule = [
+      "float,^(pavucontrol)$"
+      "float,^(blueman-manager)$"
+      "float,^(nm-connection-editor)$"
+      "float,^(qalculate-gtk)$"
       "float,^(steam_app_.*)$"
       "float,^(steam_proton$"
-		];
-		
-		windowrulev2 = [
-			# no opcacity for windows with "Meet" in title
-			"opacity 1.0 override,title:^meet\.google\.com.*$"
-			"opacity 1.0 override,title:^Meet.*$"
-			"opacity 1.0 override,title:^YouTube.*$"
-			"opacity 1.0 override,title:^.*youtube.com$"
-			"suppressevent maximize, class:.*" # You'll probably like this.
-		];
+    ];
+
+    windowrulev2 = [
+      # no opcacity for windows with "Meet" in title
+      "opacity 1.0 override,title:^meet\.google\.com.*$"
+      "opacity 1.0 override,title:^Meet.*$"
+      "opacity 1.0 override,title:^YouTube.*$"
+      "opacity 1.0 override,title:^.*youtube.com$"
+      "suppressevent maximize, class:.*" # You'll probably like this.
+    ];
   };
 }

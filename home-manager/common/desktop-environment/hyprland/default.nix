@@ -15,6 +15,7 @@
     waybar
     hyprcursor
     hypridle
+    hyprlock
     swaylock-effects
     swww
     waypaper
